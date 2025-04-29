@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicodélicos - Reducción de Daños</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 0, 255, 0.2) 0%, transparent 20%),
+                radial-gradient(circle at 90% 30%, rgba(0, 255, 255, 0.2) 0%, transparent 20%),
+                radial-gradient(circle at 50% 80%, rgba(255, 255, 0, 0.2) 0%, transparent 20%);
+            animation: bgPulse 15s infinite alternate;
+        }
+
+        @keyframes bgPulse {
+            0% { background-color: #0f0f1a; }
+            25% { background-color: #1a0f1a; }
+            50% { background-color: #0f1a1a; }
+            75% { background-color: #1a1a0f; }
+            100% { background-color: #0f0f1a; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid;
+            border-image: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00) 1;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            text-align: center;
+            color: transparent;
+            background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: rainbow 5s linear infinite;
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        h2 {
+            color: #00ffff;
+            border-bottom: 1px solid #ff00ff;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .psychedelic-box {
+            border: 1px solid;
+            border-image: linear-gradient(45deg, #ff00ff, #00ffff) 1;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: rgba(15, 15, 30, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .psychedelic-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 0, 255, 0.1) 0%,
+                rgba(0, 255, 255, 0.1) 50%,
+                rgba(255, 255, 0, 0.1) 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+            z-index: -1;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-10%, -10%); }
+            50% { transform: rotate(30deg) translate(10%, 10%); }
+            100% { transform: rotate(30deg) translate(-10%, -10%); }
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: '🌀';
+            position: absolute;
+            left: 0;
+        }
+
+        .warning {
+            background-color: rgba(255, 0, 0, 0.2);
+            border-left: 5px solid #ff0000;
+            padding: 15px;
+            margin: 20px 0;
+            animation: pulseWarning 2s infinite;
+        }
+
+        @keyframes pulseWarning {
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        .trippy-circle {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff00ff, transparent);
+            opacity: 0.3;
+            animation: moveCircle 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveCircle {
+            0% { transform: translate(10vw, 10vh); }
+            25% { transform: translate(80vw, 30vh); }
+            50% { transform: translate(50vw, 70vh); }
+            75% { transform: translate(20vw, 50vh); }
+            100% { transform: translate(10vw, 10vh); }
+        }
+
+        .trippy-circle:nth-child(2) {
+            background: radial-gradient(circle, #00ffff, transparent);
+            width: 150px;
+            height: 150px;
+            animation-duration: 25s;
+            animation-delay: 5s;
+        }
+
+        .trippy-circle:nth-child(3) {
+            background: radial-gradient(circle, #ffff00, transparent);
+            width: 200px;
+            height: 200px;
+            animation-duration: 30s;
+            animation-delay: 10s;
+        }
+    </style>
+</head>
+<body>
+    <div class="trippy-circle"></div>
+    <div class="trippy-circle"></div>
+    <div class="trippy-circle"></div>
+
+    <div class="container floating">
+        <h1>Psicodélicos y Reducción de Daños</h1>
+        
+        <div class="psychedelic-box">
+            <h2>¿Qué es la Reducción de Daños?</h2>
+            <p>La reducción de daños es un enfoque pragmático que busca minimizar los riesgos asociados con el uso de sustancias sin necesariamente promover la abstinencia. Se centra en la seguridad, la educación y el bienestar de las personas que eligen usar psicodélicos.</p>
+        </div>
+
+        <div class="psychedelic-box">
+            <h2>Principios Básicos</h2>
+            <ul>
+                <li><strong>Set y Setting:</strong> Tu estado mental (set) y el entorno físico/social (setting) son cruciales para una experiencia positiva.</li>
+                <li><strong>Dosificación:</strong> Comienza con dosis bajas, especialmente con sustancias nuevas o en entornos desconocidos.</li>
+                <li><strong>Prueba de sustancias:</strong> Siempre que sea posible, verifica la identidad y pureza de las sustancias.</li>
+                <li><strong>Compañía:</strong> Considera tener un "trip sitter" sobrio y de confianza para experiencias intensas.</li>
+                <li><strong>Integración:</strong> Dedica tiempo después de la experiencia para reflexionar y procesar lo vivido.</li>
+            </ul>
+        </div>
+
+        <div class="psychedelic-box">
+            <h2>Consejos para Diferentes Sustancias</h2>
+            
+            <h3>LSD/Psilocibina</h3>
+            <ul>
+                <li>Duración larga (8-12 horas) - planifica adecuadamente</li>
+                <li>Evita mezclar con alcohol u otras drogas</li>
+                <li>Mantente hidratado y ten snacks ligeros a mano</li>
+            </ul>
+            
+            <h3>DMT/Ayahuasca</h3>
+            <ul>
+                <li>Experiencia muy intensa pero corta (DMT) o larga (Ayahuasca)</li>
+                <li>Considera la dieta previa con Ayahuasca</li>
+                <li>Fundamental tener un guía experimentado</li>
+            </ul>
+            
+            <h3>MDMA</h3>
+            <ul>
+                <li>Controla la temperatura corporal - evita sobrecalentamiento</li>
+                <li>Suplementación previa y posterior puede ayudar</li>
+                <li>Respeta el intervalo de 3 meses entre usos</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <h2>Advertencias Importantes</h2>
+            <p>Los psicodélicos no son para todo el mundo. Personas con historial de psicosis o condiciones psiquiátricas graves deberían evitarlos. Las sustancias siempre conllevan riesgos, especialmente en contextos ilegales sin control de calidad. La combinación con medicamentos puede ser peligrosa.</p>
+            <p><strong>Si estás en crisis o necesitas ayuda:</strong> Contacta con servicios de salud mental o líneas de ayuda locales.</p>
+        </div>
+
+        <div class="psychedelic-box">
+            <h2>Recursos Adicionales</h2>
+            <ul>
+                <li>MAPS (Multidisciplinary Association for Psychedelic Studies)</li>
+                <li>Erowid - Base de datos de experiencias e información</li>
+                <li>Zendo Project - Apoyo en eventos con psicodélicos</li>
+                <li>Fireside Project - Línea de apoyo para integración</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Esta página es solo para fines informativos y no constituye consejo médico. El uso de sustancias psicodélicas puede ser ilegal en muchas jurisdicciones.</p>
+            <p>© 2023 Reducción de Daños Psicodélicos - Educación para la Seguridad</p>
+        </footer>
+    </div>
+</body>
+</html>
